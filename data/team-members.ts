@@ -17,7 +17,7 @@ export const teamMembers: TeamMemberProps[] = [
     name: "Salman Suhib",
     role: "Customer Relations",
     bio: "Salman ensures our customers have the best experience with every order and handles all customer feedback.",
-    imageUrl: "/Salman.jpg?height=300&width=300",
+    imageUrl: "/salman.jpg?height=300&width=300",
   },
   {
     name: "Mohaned Alatater",
