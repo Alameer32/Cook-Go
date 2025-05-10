@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "@/lib/firebase"
@@ -15,14 +15,12 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Loader2 } from "lucide-react"
 import { ADMIN_EMAIL } from "@/lib/constants"
 
-export default function LoginForm() {
+export default function LoginForm({ callbackUrl = "/" }: { callbackUrl?: string }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get("callbackUrl") || "/"
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
