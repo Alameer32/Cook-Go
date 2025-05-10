@@ -1,0 +1,29 @@
+// Firestore Security Rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow anyone to read and create orders
+    match /orders/{orderId} {
+      allow read: if true;
+      allow create: if true;
+      // Only allow updates and deletes by admin
+      allow update, delete: if request.auth != null && request.auth.token.email == 'salmanalameer2@gmail.com';
+    }
+    
+    // Allow public read access to menu items
+    match /menuItems/{item} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == 'salmanalameer2@gmail.com';
+    }
+    
+    // Allow users to read and write their own profile data
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if request.auth != null && request.auth.token.email == 'salmanalameer2@gmail.com';
+    }
+  }
+}
