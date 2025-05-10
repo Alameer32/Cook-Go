@@ -116,7 +116,7 @@ export default function CartPage() {
                   {cartItems.map((item) => (
                     <TableRow key={item.id}>
                       <TableCell>{item.name}</TableCell>
-                      <TableCell className="text-right">${item.price.toFixed(2)}</TableCell>
+                      <TableCell className="text-right">{item.price.toFixed(2)} MYR</TableCell>
                       <TableCell className="text-right">
                         <div className="flex items-center justify-end">
                           <Button
@@ -138,7 +138,7 @@ export default function CartPage() {
                           </Button>
                         </div>
                       </TableCell>
-                      <TableCell className="text-right">${(item.price * item.quantity).toFixed(2)}</TableCell>
+                      <TableCell className="text-right">{(item.price * item.quantity).toFixed(2)} MYR</TableCell>
                       <TableCell>
                         <Button
                           variant="ghost"

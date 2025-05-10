@@ -351,7 +351,7 @@ export default function OrdersAdminPage() {
                       <TableCell className="font-medium">{order.id.substring(0, 8)}</TableCell>
                       <TableCell>{order.customerName}</TableCell>
                       <TableCell>{formatDate(order.date)}</TableCell>
-                      <TableCell>${order.total.toFixed(2)}</TableCell>
+                      <TableCell>{order.total.toFixed(2)} MYR</TableCell>
                       <TableCell>{getStatusBadge(order.status as OrderStatus)}</TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">
@@ -470,14 +470,14 @@ export default function OrdersAdminPage() {
                         <TableRow key={index}>
                           <TableCell>{item.name}</TableCell>
                           <TableCell className="text-right">{item.quantity}</TableCell>
-                          <TableCell className="text-right">${(item.price * item.quantity).toFixed(2)}</TableCell>
+                          <TableCell className="text-right">{(item.price * item.quantity).toFixed(2)} MYR</TableCell>
                         </TableRow>
                       ))}
                       <TableRow>
                         <TableCell colSpan={2} className="text-right font-bold">
                           Total
                         </TableCell>
-                        <TableCell className="text-right font-bold">${selectedOrder.total.toFixed(2)}</TableCell>
+                        <TableCell className="text-right font-bold">{selectedOrder.total.toFixed(2)} MYR</TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
