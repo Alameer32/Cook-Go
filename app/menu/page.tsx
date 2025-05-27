@@ -18,7 +18,7 @@ import { db, auth } from "@/lib/firebase"
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore"
 import { useRouter } from "next/navigation"
 
-type MainDish = "kabsa" | "pastitsio"
+type MainDish = "kabsa" | "pastitsio" | "Fahsa"
 type Side = "garlic" | "tomato" | "salad"
 type Drink = "water" | "coke" | "apple"
 
@@ -27,6 +27,7 @@ const menuItems = {
   mainDishes: {
     kabsa: { name: "Kabsa", price: 100 },
     pastitsio: { name: "Pastitsio", price: 120 },
+    Fahsa: { name: "Fahsa", price: 60 }, // NEW DISH ADDED HERE
   },
   sides: {
     garlic: { name: "Garlic Sauce", price: 3 },
@@ -243,9 +244,10 @@ export default function MenuPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-6">1. Choose Your Main Dish</h2>
             <Tabs defaultValue="kabsa" onValueChange={(value) => setSelectedDish(value as MainDish)}>
-              <TabsList className="grid w-full grid-cols-2">
+              <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="kabsa">Kabsa</TabsTrigger>
                 <TabsTrigger value="pastitsio">Pastitsio</TabsTrigger>
+                <TabsTrigger value="Fahsa">Fahsa</TabsTrigger>
               </TabsList>
               <TabsContent value="kabsa">
                 <Card>
@@ -261,7 +263,7 @@ export default function MenuPage() {
                     <CardTitle>Kabsa</CardTitle>
                     <CardDescription>
                       A traditional Arabian rice dish made with basmati rice, meat, vegetables, and a blend of spices.
-                      enough for 6-7 pax.
+                      enough for 5-6 pax.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -282,11 +284,32 @@ export default function MenuPage() {
                   <CardHeader>
                     <CardTitle>Pastitsio</CardTitle>
                     <CardDescription>
-                      A delicious baked pasta dish with seasoned ground meat and a creamy béchamel sauce. enough for 7-8 pax.
+                      A delicious baked pasta dish with seasoned ground meat and a creamy béchamel sauce. enough for 6-7 pax.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="font-semibold text-lg">{menuItems.mainDishes.pastitsio.price.toFixed(2)} MYR</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="Fahsa">
+                <Card>
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src="/fahsa.png?height=300&width=500"
+                      alt="Fahsa"
+                      fill
+                      className="object-cover rounded-t-lg"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle>Fahsa</CardTitle>
+                    <CardDescription>
+                      A traditional Yemeni stew made with lamb, herbs, and spices, slow-cooked in a rich broth. Serves 5-6 people.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="font-semibold text-lg">{menuItems.mainDishes.Fahsa.price.toFixed(2)} MYR</p>
                   </CardContent>
                 </Card>
               </TabsContent>

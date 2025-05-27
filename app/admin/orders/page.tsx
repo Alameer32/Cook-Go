@@ -81,9 +81,9 @@ export default function OrdersAdminPage() {
         setLoading(false)
 
         // If Firebase is not configured, show mock data
-        if (error.code === "permission-denied" || error.code === "app-deleted") {
-          setOrders(getMockOrders())
-        }
+        // if (error.code === "permission-denied" || error.code === "app-deleted") {
+        //   setOrders(getMockOrders())
+        // }
       },
     )
 
@@ -492,90 +492,90 @@ export default function OrdersAdminPage() {
 }
 
 // Mock data for when Firebase is not configured
-function getMockOrders() {
-  return [
-    {
-      id: "ORD-001",
-      customerName: "Ahmed Ali",
-      phone: "+123-456-7890",
-      address: "123 Main St, Apartment 4B, City",
-      date: new Date("2023-05-08T14:30:00").toISOString(),
-      status: "pending",
-      total: 27.98,
-      items: [
-        { name: "Kabsa", price: 12.99, quantity: 1 },
-        { name: "Garlic Sauce", price: 1.5, quantity: 1 },
-        { name: "Salad", price: 3.5, quantity: 1 },
-        { name: "Coca Cola", price: 1.99, quantity: 2 },
-      ],
-      notes: "Please make it spicy and include extra napkins.",
-    },
-    {
-      id: "ORD-002",
-      customerName: "Sarah Johnson",
-      phone: "+123-555-1234",
-      address: "456 Oak Avenue, Suite 7, Town",
-      date: new Date("2023-05-08T15:45:00").toISOString(),
-      status: "preparing",
-      total: 32.47,
-      items: [
-        { name: "Pastitsio", price: 14.99, quantity: 1 },
-        { name: "Tomato Sauce", price: 1.5, quantity: 1 },
-        { name: "Salad", price: 3.5, quantity: 1 },
-        { name: "Apple Juice", price: 2.49, quantity: 2 },
-      ],
-      notes: "No onions in the salad please.",
-    },
-    {
-      id: "ORD-003",
-      customerName: "Mohammed Hassan",
-      phone: "+123-789-4561",
-      address: "789 Pine Street, Building C, Village",
-      date: new Date("2023-05-08T16:15:00").toISOString(),
-      status: "delivered",
-      total: 41.96,
-      items: [
-        { name: "Kabsa", price: 12.99, quantity: 2 },
-        { name: "Garlic Sauce", price: 1.5, quantity: 2 },
-        { name: "Tomato Sauce", price: 1.5, quantity: 1 },
-        { name: "Water", price: 0.99, quantity: 2 },
-      ],
-      notes: "",
-    },
-    {
-      id: "ORD-004",
-      customerName: "Emily Chen",
-      phone: "+123-321-6547",
-      address: "101 Maple Road, Apartment 12D, City",
-      date: new Date("2023-05-08T17:30:00").toISOString(),
-      status: "out-for-delivery",
-      total: 29.97,
-      items: [
-        { name: "Pastitsio", price: 14.99, quantity: 1 },
-        { name: "Garlic Sauce", price: 1.5, quantity: 1 },
-        { name: "Salad", price: 3.5, quantity: 1 },
-        { name: "Coca Cola", price: 1.99, quantity: 1 },
-        { name: "Apple Juice", price: 2.49, quantity: 1 },
-      ],
-      notes: "Please ring doorbell twice.",
-    },
-    {
-      id: "ORD-005",
-      customerName: "John Smith",
-      phone: "+123-852-9637",
-      address: "222 Cedar Lane, House 5, Suburb",
-      date: new Date("2023-05-08T18:00:00").toISOString(),
-      status: "pending",
-      total: 55.95,
-      items: [
-        { name: "Kabsa", price: 12.99, quantity: 2 },
-        { name: "Pastitsio", price: 14.99, quantity: 1 },
-        { name: "Garlic Sauce", price: 1.5, quantity: 2 },
-        { name: "Tomato Sauce", price: 1.5, quantity: 1 },
-        { name: "Salad", price: 3.5, quantity: 2 },
-        { name: "Coca Cola", price: 1.99, quantity: 1 },
-      ],
-      notes: "This is for a birthday celebration.",
-    },
-  ] as Order[]
-}
+// function getMockOrders() {
+//   return [
+//     {
+//       id: "ORD-001",
+//       customerName: "Ahmed Ali",
+//       phone: "+123-456-7890",
+//       address: "123 Main St, Apartment 4B, City",
+//       date: new Date("2023-05-08T14:30:00").toISOString(),
+//       status: "pending",
+//       total: 27.98,
+//       items: [
+//         { name: "Kabsa", price: 12.99, quantity: 1 },
+//         { name: "Garlic Sauce", price: 1.5, quantity: 1 },
+//         { name: "Salad", price: 3.5, quantity: 1 },
+//         { name: "Coca Cola", price: 1.99, quantity: 2 },
+//       ],
+//       notes: "Please make it spicy and include extra napkins.",
+//     },
+//     {
+//       id: "ORD-002",
+//       customerName: "Sarah Johnson",
+//       phone: "+123-555-1234",
+//       address: "456 Oak Avenue, Suite 7, Town",
+//       date: new Date("2023-05-08T15:45:00").toISOString(),
+//       status: "preparing",
+//       total: 32.47,
+//       items: [
+//         { name: "Pastitsio", price: 14.99, quantity: 1 },
+//         { name: "Tomato Sauce", price: 1.5, quantity: 1 },
+//         { name: "Salad", price: 3.5, quantity: 1 },
+//         { name: "Apple Juice", price: 2.49, quantity: 2 },
+//       ],
+//       notes: "No onions in the salad please.",
+//     },
+//     {
+//       id: "ORD-003",
+//       customerName: "Mohammed Hassan",
+//       phone: "+123-789-4561",
+//       address: "789 Pine Street, Building C, Village",
+//       date: new Date("2023-05-08T16:15:00").toISOString(),
+//       status: "delivered",
+//       total: 41.96,
+//       items: [
+//         { name: "Kabsa", price: 12.99, quantity: 2 },
+//         { name: "Garlic Sauce", price: 1.5, quantity: 2 },
+//         { name: "Tomato Sauce", price: 1.5, quantity: 1 },
+//         { name: "Water", price: 0.99, quantity: 2 },
+//       ],
+//       notes: "",
+//     },
+//     {
+//       id: "ORD-004",
+//       customerName: "Emily Chen",
+//       phone: "+123-321-6547",
+//       address: "101 Maple Road, Apartment 12D, City",
+//       date: new Date("2023-05-08T17:30:00").toISOString(),
+//       status: "out-for-delivery",
+//       total: 29.97,
+//       items: [
+//         { name: "Pastitsio", price: 14.99, quantity: 1 },
+//         { name: "Garlic Sauce", price: 1.5, quantity: 1 },
+//         { name: "Salad", price: 3.5, quantity: 1 },
+//         { name: "Coca Cola", price: 1.99, quantity: 1 },
+//         { name: "Apple Juice", price: 2.49, quantity: 1 },
+//       ],
+//       notes: "Please ring doorbell twice.",
+//     },
+//     {
+//       id: "ORD-005",
+//       customerName: "John Smith",
+//       phone: "+123-852-9637",
+//       address: "222 Cedar Lane, House 5, Suburb",
+//       date: new Date("2023-05-08T18:00:00").toISOString(),
+//       status: "pending",
+//       total: 55.95,
+//       items: [
+//         { name: "Kabsa", price: 12.99, quantity: 2 },
+//         { name: "Pastitsio", price: 14.99, quantity: 1 },
+//         { name: "Garlic Sauce", price: 1.5, quantity: 2 },
+//         { name: "Tomato Sauce", price: 1.5, quantity: 1 },
+//         { name: "Salad", price: 3.5, quantity: 2 },
+//         { name: "Coca Cola", price: 1.99, quantity: 1 },
+//       ],
+//       notes: "This is for a birthday celebration.",
+//     },
+//   ] as Order[]
+// }
