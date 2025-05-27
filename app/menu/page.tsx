@@ -261,7 +261,7 @@ export default function MenuPage() {
                     <CardTitle>Kabsa</CardTitle>
                     <CardDescription>
                       A traditional Arabian rice dish made with basmati rice, meat, vegetables, and a blend of spices.
-                      enough for 5-6 pax.
+                      enough for 6-7 pax.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -282,7 +282,7 @@ export default function MenuPage() {
                   <CardHeader>
                     <CardTitle>Pastitsio</CardTitle>
                     <CardDescription>
-                      A delicious baked pasta dish with seasoned ground meat and a creamy béchamel sauce. enough for 6-7 pax.
+                      A delicious baked pasta dish with seasoned ground meat and a creamy béchamel sauce. enough for 7-8 pax.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
