@@ -36,7 +36,7 @@ const menuItems = {
   },
   drinks: {
     water: { name: "Water", price: 1.5 },
-    coke: { name: "Coca Cola", price: 3 },
+    coke: { name: "Cola", price: 3 },
     apple: { name: "Apple Juice", price: 3 },
   },
 }
@@ -383,7 +383,7 @@ export default function MenuPage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="coke" id="coke" />
-                  <Label htmlFor="coke">Coca Cola ({menuItems.drinks.coke.price.toFixed(2)} MYR)</Label>
+                  <Label htmlFor="coke">Cola ({menuItems.drinks.coke.price.toFixed(2)} MYR)</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="apple" id="apple" />

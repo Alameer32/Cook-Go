@@ -61,4 +61,10 @@ export const teamMembers: TeamMemberProps[] = [
     bio: "Anas is responsible for sourcing and managing the high-quality ingredients that go into every dish.",
     imageUrl: "/anas.jpg?height=400&width=300",
   },
+  {
+    name: "Omar osama - Sourcing & Ingredients 2",
+    role: "Logistics Director",
+    bio: "Omar helps Anas with the responsibility for sourcing and managing the high-quality ingredients that go into every dish.",
+    imageUrl: "/osama.jpg?height=400&width=300",
+  },
 ]
